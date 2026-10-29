@@ -4,3 +4,8 @@ __pycache__/
 .venv/
 uploads/
 runs/
+
+# ws-scrcpy 源码参与提交，仅忽略构建产物与运行时生成文件
+tools/ws-scrcpy/node_modules/
+tools/ws-scrcpy/dist/
+tools/ws-scrcpy/backend.yaml

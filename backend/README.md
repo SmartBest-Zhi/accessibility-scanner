@@ -19,12 +19,13 @@ cp .env.example .env   # 按需修改 SDK 路径与端口
 
 ### ws-scrcpy 一次性安装
 
+ws-scrcpy 源码已随本仓库提交（`tools/ws-scrcpy/`，上游已归档），无需再 clone，
+只需安装依赖并构建：
+
 ```bash
-cd backend/tools
-git clone https://github.com/NetrisTV/ws-scrcpy.git
-cd ws-scrcpy
-# 关闭浏览器终端功能：node-pty 0.10 无法在 Node 22 上编译，而我们只需要视频流。
-# 把 webpack/default.build.config.json 里的 "INCLUDE_ADB_SHELL" 改为 false（本仓库已改好）。
+cd backend/tools/ws-scrcpy
+# 已关闭浏览器终端功能：node-pty 0.10 无法在 Node 22 上编译，而我们只需要视频流
+# （webpack/default.build.config.json 里的 "INCLUDE_ADB_SHELL" 已改为 false）。
 npm install --ignore-scripts
 npm run dist
 cd dist && npm install --omit=dev --ignore-scripts
