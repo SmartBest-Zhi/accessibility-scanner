@@ -1,7 +1,0 @@
-spring:
-  application: name=code-generator
-  datasource:
-    url: jdbc:mysql://117.72.32.204:3306/intelli_galaxy?useSSL=false&serverTimezone=UTC
-    username: intelli_galaxy
-    password: yczbest
-    driver-class-name: com.mysql.cj.jdbc.Driver

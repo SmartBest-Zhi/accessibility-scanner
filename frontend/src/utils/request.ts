@@ -6,7 +6,7 @@ import {inject} from "vue";
  * 请求 设置
  */
 const serverConfig = {
-    baseURL: "http://127.0.0.1", // 请求基础地址,可根据环境自定义
+    baseURL: "", // 同源相对路径，/api 由 vite dev proxy 转发到后端
     useTokenAuthorization: false, // 是否开启 token 认证
     AuthorizationField: "Authorization" // Token 字段
 };
@@ -28,10 +28,10 @@ request.interceptors.request.use(
     }
     // 设置请求头
     if(!config.headers["content-type"]) { // 如果没有设置请求头
-      if(config.method === 'post') {
+      if(config.method === 'post' && !(config.data instanceof FormData)) {
         config.headers["content-type"] = "application/x-www-form-urlencoded"; // post 请求
         config.data = qs.stringify(config.data); // 序列化,比如表单数据
-      } else {
+      } else if (!(config.data instanceof FormData)) {
         config.headers["content-type"] = "application/json"; // 默认类型
       }
     }

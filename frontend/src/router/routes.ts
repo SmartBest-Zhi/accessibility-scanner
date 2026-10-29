@@ -28,6 +28,14 @@ const routes = [
                     layout:"admin"
                 }
             },
+            {
+                path: 'accessibilityTest',
+                component: () => import("../view/AccessibilityTest/index.vue"),
+                title: 'App Accessibility Testing',
+                meta:{
+                    layout:"admin"
+                }
+            },
         ],
     },
     {

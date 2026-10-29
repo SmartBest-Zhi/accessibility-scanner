@@ -52,6 +52,11 @@ const menuItems = ref([
     key: "MeetingRoom",
     title: "Meeting Room",
     path: "/admin/userMgt"
+  },
+  {
+    key: "AccessibilityTest",
+    title: "App Accessibility Testing",
+    path: "/admin/accessibilityTest"
   }
 ])
 const selectedKeys = ref<string[]>([router.currentRoute.value.path]);
